@@ -1,0 +1,22 @@
+file = open("jumpyrinth/2c464e58-9121-11e9-aec5-34415dec71f2.txt","r")
+
+STACK = []
+FLAG = []
+
+
+def move_down(m):
+	file.seek(file.tell() + m*1025)
+
+def move_left(m):
+	file.seek(file.tell()-m)
+
+file.seek(0)
+c = file.read(1)
+while c != '@':
+	c = file.readline(1)
+	if(c == '$'):
+		move_down(1)
+	if(c == '('):
+		m = file.read(2)
+		move_left(m)
+	if(c == ')'):
