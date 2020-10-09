@@ -1,0 +1,19 @@
+
+def binarySearch(word,words):
+	half = len(words)/2
+	compare = words[half]
+	print(compare)
+	if(word == compare):
+		print("ENCONTRADO")
+		return True
+	elif(word < compare.lower()):
+		print(compare + ":")
+		print(word[0])
+		binarySearch(word,words[:half])
+	elif(word > compare.lower()):
+		print(compare + ":")
+		print(word[0])
+		binarySearch(word,words[half:])
+	else:
+		FLAG.append(word)
+		return False
