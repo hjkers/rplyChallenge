@@ -17,3 +17,24 @@ def binarySearch(word,words):
 	else:
 		FLAG.append(word)
 		return False
+		
+		
+		
+		
+
+
+def binarySearch(word,words):
+	low = 0
+	high = len(words)
+	while(low <= high):
+		half = low + ((high - low) // 2)
+		res = (word == words[half])
+		if(res == 0):
+			print("Encontrado")
+			return True
+		if(res > 0):
+			low = half + 1
+		else:
+			high = half - 1
+	FLAG.append(word)
+	return False
